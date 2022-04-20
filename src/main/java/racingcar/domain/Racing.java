@@ -1,11 +1,19 @@
 package racingcar.domain;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Racing {
 
     private final List<Car> cars;
     private int count;
 
     public Racing(String carNames, String count) {
+        cars = new ArrayList<>();
+        String[] names = carNames.split(",");
+        for (String name : names) {
+            cars.add(new Car(name));
+        }
         isIntegerGreaterThanZero(count);
         this.count = Integer.parseInt(count);
     }
