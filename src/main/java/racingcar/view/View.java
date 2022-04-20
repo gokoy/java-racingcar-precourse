@@ -33,4 +33,15 @@ public class View {
         }
         System.out.println(builder);
     }
+
+    public static void printWinners(List<Car> winners) {
+        StringBuilder builder = new StringBuilder();
+        builder.append("최종 우승자는 ")
+                .append(winners.get(0).getName());
+        for (int i = 1; i < winners.size(); i++) {
+            builder.append(",").append(winners.get(i).getName());
+        }
+        builder.append("입니다");
+        System.out.println(builder);
+    }
 }
