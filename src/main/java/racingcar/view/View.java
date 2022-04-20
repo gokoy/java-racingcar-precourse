@@ -41,7 +41,7 @@ public class View {
         for (int i = 1; i < winners.size(); i++) {
             builder.append(",").append(winners.get(i).getName());
         }
-        builder.append("입니다");
+        builder.append(" 입니다.");
         System.out.println(builder);
     }
 }
