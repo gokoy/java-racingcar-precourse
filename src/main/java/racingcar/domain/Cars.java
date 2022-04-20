@@ -16,6 +16,9 @@ public class Cars {
     }
 
     public List<Car> move() {
+        for (Car car : cars) {
+            car.move();
+        }
 
         return cars;
     }

@@ -1,5 +1,6 @@
 package racingcar.domain;
 
+import camp.nextstep.edu.missionutils.Randoms;
 import java.util.regex.Pattern;
 
 public class Car {
@@ -23,7 +24,11 @@ public class Car {
     }
 
     public void move() {
-        distance += 1;
+        int randomNumber = Randoms.pickNumberInRange(0, 9);
+
+        if (4 <= randomNumber) {
+            distance += 1;
+        }
     }
 
     public String getName() {
