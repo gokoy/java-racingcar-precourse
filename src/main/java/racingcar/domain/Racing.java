@@ -7,6 +7,7 @@ public class Racing {
 
     private final List<Car> cars;
     private int count;
+    private boolean running;
 
     public Racing(String carNames, String count) {
         cars = new ArrayList<>();
@@ -16,6 +17,7 @@ public class Racing {
         }
         isIntegerGreaterThanZero(count);
         this.count = Integer.parseInt(count);
+        this.running = true;
     }
 
     private void isIntegerGreaterThanZero(String count) {
@@ -28,5 +30,9 @@ public class Racing {
         if (Integer.parseInt(count) <= 0) {
             throw new IllegalArgumentException("count must be an integer greater than 0.");
         }
+    }
+
+    public boolean isRunning() {
+        return running;
     }
 }
