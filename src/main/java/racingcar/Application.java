@@ -1,6 +1,8 @@
 package racingcar;
 
+import java.util.List;
 import racingcar.domain.Racing;
+import racingcar.dto.CarDto;
 import racingcar.view.View;
 
 public class Application {
@@ -10,5 +12,9 @@ public class Application {
         String count = View.getCount();
         Racing racing = new Racing(carNames, count);
 
+        while (racing.isRunning()) {
+            List<CarDto> dtos = racing.race();
+            View.printCars(dtos);
+        }
     }
 }
