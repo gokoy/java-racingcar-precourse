@@ -2,7 +2,6 @@ package racingcar.domain;
 
 import java.util.ArrayList;
 import java.util.List;
-import racingcar.dto.CarDto;
 
 public class Cars {
 
@@ -16,8 +15,8 @@ public class Cars {
         }
     }
 
-    public List<CarDto> move() {
+    public List<Car> move() {
 
-        return null;
+        return cars;
     }
 }

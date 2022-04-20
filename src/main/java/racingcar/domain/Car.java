@@ -21,4 +21,16 @@ public class Car {
         throw new IllegalArgumentException(
                 "name must be 5 characters or less in length consisting of English, numbers.");
     }
+
+    public void move() {
+        distance += 1;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getDistance() {
+        return distance;
+    }
 }

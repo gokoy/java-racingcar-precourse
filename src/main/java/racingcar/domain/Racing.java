@@ -1,7 +1,6 @@
 package racingcar.domain;
 
 import java.util.List;
-import racingcar.dto.CarDto;
 
 public class Racing {
 
@@ -28,8 +27,8 @@ public class Racing {
         }
     }
 
-    public List<CarDto> race() {
-        count--;
+    public List<Car> race() {
+        count -= 1;
 
         if (count == 0) {
             running = false;

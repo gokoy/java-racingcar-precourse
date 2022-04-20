@@ -2,7 +2,7 @@ package racingcar.view;
 
 import camp.nextstep.edu.missionutils.Console;
 import java.util.List;
-import racingcar.dto.CarDto;
+import racingcar.domain.Car;
 
 public class View {
 
@@ -17,18 +17,18 @@ public class View {
         return Console.readLine().trim();
     }
 
-    public static void printCars(List<CarDto> dtos) {
+    public static void printCars(List<Car> cars) {
         System.out.println("실행 결과");
 
-        for (CarDto dto : dtos) {
-            printCar(dto);
+        for (Car car : cars) {
+            printCar(car);
         }
     }
 
-    public static void printCar(CarDto dto) {
+    public static void printCar(Car car) {
         StringBuilder builder = new StringBuilder();
-        builder.append(dto.getName()).append(" : ");
-        for (int i = 0; i < dto.getDistance(); i++) {
+        builder.append(car.getName()).append(" : ");
+        for (int i = 0; i < car.getDistance(); i++) {
             builder.append("-");
         }
         System.out.println(builder);
