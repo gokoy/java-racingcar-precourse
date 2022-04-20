@@ -19,11 +19,11 @@ public class Racing {
         try {
             Integer.parseInt(count);
         } catch (NumberFormatException e) {
-            throw new IllegalArgumentException("count must be an integer greater than 0.");
+            throw new IllegalArgumentException("[ERROR] count must be an integer greater than 0.");
         }
 
         if (Integer.parseInt(count) <= 0) {
-            throw new IllegalArgumentException("count must be an integer greater than 0.");
+            throw new IllegalArgumentException("[ERROR] count must be an integer greater than 0.");
         }
     }
 
@@ -39,5 +39,9 @@ public class Racing {
 
     public boolean isRunning() {
         return running;
+    }
+
+    public List<Car> getWinners() {
+        return cars.getHeadCars();
     }
 }

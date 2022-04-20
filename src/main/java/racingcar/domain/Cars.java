@@ -22,4 +22,25 @@ public class Cars {
 
         return cars;
     }
+
+    public List<Car> getHeadCars() {
+        int maxDistance = getMaxDistance();
+
+        List<Car> headCars = new ArrayList<>();
+        for (Car car : cars) {
+            if (car.getDistance() == maxDistance) {
+                headCars.add(car);
+            }
+        }
+
+        return headCars;
+    }
+
+    private int getMaxDistance() {
+        int maxDistance = Integer.MIN_VALUE;
+        for (Car car : cars) {
+            maxDistance = Math.max(maxDistance, car.getDistance());
+        }
+        return maxDistance;
+    }
 }
