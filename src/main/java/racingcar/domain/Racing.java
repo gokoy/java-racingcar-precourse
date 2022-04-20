@@ -32,7 +32,17 @@ public class Racing {
         }
     }
 
+    public void race() {
+        count--;
+
+        if (count == 0) {
+            running = false;
+        }
+    }
+
     public boolean isRunning() {
         return running;
     }
+
+
 }
