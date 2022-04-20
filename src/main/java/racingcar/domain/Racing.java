@@ -1,20 +1,16 @@
 package racingcar.domain;
 
-import java.util.ArrayList;
 import java.util.List;
+import racingcar.dto.CarDto;
 
 public class Racing {
 
-    private final List<Car> cars;
+    private final Cars cars;
     private int count;
     private boolean running;
 
     public Racing(String carNames, String count) {
-        cars = new ArrayList<>();
-        String[] names = carNames.split(",");
-        for (String name : names) {
-            cars.add(new Car(name));
-        }
+        cars = new Cars(carNames);
         isIntegerGreaterThanZero(count);
         this.count = Integer.parseInt(count);
         this.running = true;
@@ -32,17 +28,17 @@ public class Racing {
         }
     }
 
-    public void race() {
+    public List<CarDto> race() {
         count--;
 
         if (count == 0) {
             running = false;
         }
+
+        return cars.move();
     }
 
     public boolean isRunning() {
         return running;
     }
-
-
 }
