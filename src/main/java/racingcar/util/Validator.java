@@ -23,7 +23,7 @@ public class Validator {
         }
 
         throw new IllegalArgumentException(
-                "[ERROR] name must be 5 characters or less in length consisting of English, numbers.");
+                "[ERROR] 자동차 이름은 영어, 숫자로 구성된 5자 이하의 문자열입니다.");
     }
 
     public static boolean validateCount(String count) {
@@ -39,7 +39,7 @@ public class Validator {
 
     private static void isGreaterThanZero(String count) {
         if (Integer.parseInt(count) <= 0) {
-            throw new IllegalArgumentException("[ERROR] count must be greater than 0.");
+            throw new IllegalArgumentException("[ERROR] 횟수는 0 이상이어야 합니다.");
         }
     }
 
@@ -47,7 +47,7 @@ public class Validator {
         try {
             Integer.parseInt(count);
         } catch (NumberFormatException e) {
-            throw new IllegalArgumentException("[ERROR] count must be an integer.");
+            throw new IllegalArgumentException("[ERROR] 횟수는 정수여야 합니다.");
         }
     }
 }
