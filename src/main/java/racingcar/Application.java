@@ -16,5 +16,8 @@ public class Application {
             List<Car> cars = racing.race();
             View.printCars(cars);
         }
+
+        List<Car> winners = racing.getWinners();
+        View.printWinners(winners);
     }
 }
