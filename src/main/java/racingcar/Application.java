@@ -9,15 +9,8 @@ import racingcar.view.View;
 public class Application {
 
     public static void main(String[] args) {
-        String carNames = View.getCarNames();
-        while (!Validator.validateCarName(carNames)) {
-            carNames = View.getCarNames();
-        }
-
-        String count = View.getCount();
-        while (!Validator.validateCount(count)) {
-            count = View.getCount();
-        }
+        String carNames = inputCarNames();
+        String count = inputCount();
 
         Racing racing = new Racing(carNames, count);
 
@@ -28,5 +21,21 @@ public class Application {
 
         List<Car> winners = racing.getWinners();
         View.printWinners(winners);
+    }
+
+    private static String inputCarNames() {
+        String carNames = View.getCarNames();
+        while (!Validator.validateCarName(carNames)) {
+            carNames = View.getCarNames();
+        }
+        return carNames;
+    }
+
+    private static String inputCount() {
+        String count = View.getCount();
+        while (!Validator.validateCount(count)) {
+            count = View.getCount();
+        }
+        return count;
     }
 }
