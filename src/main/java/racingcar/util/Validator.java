@@ -4,15 +4,22 @@ import java.util.regex.Pattern;
 
 public class Validator {
 
-    public static boolean validateCarName(String carNames) {
-        String[] split = carNames.split(",");
-        for (String s : split) {
-            try {
-                checkRegex(s);
-            } catch (IllegalArgumentException e) {
-                System.out.println(e.getMessage());
-                return false;
-            }
+    public static boolean validateCarNames(String str) {
+        String[] names = str.split(",");
+        boolean result = true;
+        for (String name : names) {
+            result = validateCarName(name);
+        }
+
+        return result;
+    }
+
+    public static boolean validateCarName(String name) {
+        try {
+            checkRegex(name);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+            return false;
         }
         return true;
     }

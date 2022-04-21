@@ -25,7 +25,7 @@ public class Application {
 
     private static String inputCarNames() {
         String carNames = View.getCarNames();
-        while (!Validator.validateCarName(carNames)) {
+        while (!Validator.validateCarNames(carNames)) {
             carNames = View.getCarNames();
         }
         return carNames;
