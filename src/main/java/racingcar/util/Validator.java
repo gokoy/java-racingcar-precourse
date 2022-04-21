@@ -5,23 +5,21 @@ import java.util.regex.Pattern;
 public class Validator {
 
     public static boolean validateCarNames(String str) {
-        String[] names = str.split(",");
-        boolean result = true;
-        for (String name : names) {
-            result = validateCarName(name);
-        }
-
-        return result;
-    }
-
-    public static boolean validateCarName(String name) {
         try {
-            checkRegex(name);
+            validateEachCarName(str);
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
             return false;
         }
+
         return true;
+    }
+
+    private static void validateEachCarName(String str) {
+        String[] names = str.split(",");
+        for (String name : names) {
+            checkRegex(name);
+        }
     }
 
     private static void checkRegex(String str) {
