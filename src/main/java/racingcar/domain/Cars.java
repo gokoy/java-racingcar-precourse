@@ -2,6 +2,7 @@ package racingcar.domain;
 
 import java.util.ArrayList;
 import java.util.List;
+import racingcar.config.Configuration;
 
 public class Cars {
 
@@ -9,7 +10,7 @@ public class Cars {
 
     public Cars(String carNames) {
         cars = new ArrayList<>();
-        String[] names = carNames.split(",");
+        String[] names = carNames.split(Configuration.CAR_NAME_DELIMITER);
         for (String name : names) {
             cars.add(new Car(name));
         }

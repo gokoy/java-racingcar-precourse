@@ -1,5 +1,9 @@
 package racingcar.util;
 
+import static racingcar.config.Configuration.CAR_NAME_DELIMITER;
+import static racingcar.config.Configuration.CAR_NAME_REGEX_PATTERN;
+import static racingcar.config.Configuration.COUNT_CONDITION;
+
 import java.util.regex.Pattern;
 
 public class Validator {
@@ -16,14 +20,14 @@ public class Validator {
     }
 
     private static void validateEachCarName(String str) {
-        String[] names = str.split(",");
+        String[] names = str.split(CAR_NAME_DELIMITER);
         for (String name : names) {
             checkRegex(name);
         }
     }
 
     private static void checkRegex(String str) {
-        if (Pattern.matches("^[0-9a-zA-Z]{1,5}$", str)) {
+        if (Pattern.matches(CAR_NAME_REGEX_PATTERN, str)) {
             return;
         }
 
@@ -43,7 +47,7 @@ public class Validator {
     }
 
     private static void isGreaterThanZero(String count) {
-        if (Integer.parseInt(count) <= 0) {
+        if (Integer.parseInt(count) <= COUNT_CONDITION) {
             throw new IllegalArgumentException("[ERROR] 횟수는 0 이상이어야 합니다.");
         }
     }
