@@ -19,8 +19,8 @@ public class Validator {
     }
 
     public static void isGreaterThanZero(String count) {
-        if (Integer.parseInt(count) <= COUNT_CONDITION) {
-            throw new IllegalArgumentException("횟수는 0 이상이어야 합니다.");
+        if (Integer.parseInt(count) < COUNT_CONDITION) {
+            throw new IllegalArgumentException("횟수는 " + COUNT_CONDITION + " 이상이어야 합니다.");
         }
     }
 
