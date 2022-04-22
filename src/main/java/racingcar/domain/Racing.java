@@ -7,9 +7,9 @@ public class Racing {
     private final Cars cars;
     private final Count count;
 
-    public Racing(String carNames, String count) {
+    public Racing(String carNames, String countStr) {
         cars = new Cars(carNames);
-        this.count = new Count(Integer.parseInt(count));
+        count = new Count(Integer.parseInt(countStr));
     }
 
     public List<Car> race() {
