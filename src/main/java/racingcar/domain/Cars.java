@@ -28,12 +28,16 @@ public class Cars {
 
         List<Car> headCars = new ArrayList<>();
         for (Car car : cars) {
-            if (car.getDistance() == maxDistance) {
-                headCars.add(car);
-            }
+            addMaxDistanceCar(headCars, car, maxDistance);
         }
 
         return headCars;
+    }
+
+    private void addMaxDistanceCar(List<Car> headCars, Car car, int maxDistance) {
+        if (car.getDistance() == maxDistance) {
+            headCars.add(car);
+        }
     }
 
     private int getMaxDistance() {
