@@ -4,11 +4,11 @@ import camp.nextstep.edu.missionutils.Randoms;
 
 public class Car {
 
-    private static final int CAR_DISTANCE_INIT = 0;
-    private static final int RANDOM_NUMBER_RANGE_FROM = 0;
-    private static final int RANDOM_NUMBER_RANGE_TO = 9;
-    private static final int MOVE_CONDITION = 4;
-    private static final int MOVE_UNIT = 1;
+    public static final int CAR_DISTANCE_INIT = 0;
+    public static final int RANDOM_NUMBER_RANGE_FROM = 0;
+    public static final int RANDOM_NUMBER_RANGE_TO = 9;
+    public static final int MOVE_CONDITION = 4;
+    public static final int MOVE_UNIT = 1;
 
     private final Name name;
     private final Distance distance;
