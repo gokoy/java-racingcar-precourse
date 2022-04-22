@@ -5,27 +5,21 @@ import java.util.List;
 public class Racing {
 
     private final Cars cars;
-    private int count;
-    private boolean running;
+    private final Count count;
 
     public Racing(String carNames, String count) {
         cars = new Cars(carNames);
-        this.count = Integer.parseInt(count);
-        this.running = true;
+        this.count = new Count(Integer.parseInt(count));
     }
 
     public List<Car> race() {
-        count -= 1;
-
-        if (count == 0) {
-            running = false;
-        }
+        count.down();
 
         return cars.move();
     }
 
     public boolean isRunning() {
-        return running;
+        return count.isRemain();
     }
 
     public List<Car> getWinners() {
