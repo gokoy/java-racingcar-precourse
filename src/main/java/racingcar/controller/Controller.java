@@ -44,6 +44,9 @@ public class Controller {
 
     private void checkEachCarName(String carNames) {
         String[] names = carNames.split(Configuration.CAR_NAME_DELIMITER);
+
+        Validator.isEmptyArray(names);
+
         for (String name : names) {
             Validator.checkRegex(name);
         }

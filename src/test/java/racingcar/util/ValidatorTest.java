@@ -3,10 +3,29 @@ package racingcar.util;
 import static org.assertj.core.api.Assertions.assertThatIllegalArgumentException;
 
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
 class ValidatorTest {
+
+    @DisplayName("빈 배열 검증 예외 처리")
+    @Test
+    void 빈_배열_검증_예외_처리() {
+        String[] arr = {};
+
+        assertThatIllegalArgumentException()
+                .isThrownBy(() -> Validator.isEmptyArray(arr))
+                .withMessageContaining(Validator.CAR_NAME_VALIDATE_EXCEPTION_MESSAGE);
+    }
+
+    @DisplayName("빈 배열 검증")
+    @Test
+    void 빈_배열_검증() {
+        String[] arr = {"1", "2", "3"};
+
+        Validator.isEmptyArray(arr);
+    }
 
     @DisplayName("자동차 이름 검증 예외 처리")
     @ParameterizedTest
@@ -39,7 +58,7 @@ class ValidatorTest {
         //then
         assertThatIllegalArgumentException()
                 .isThrownBy(() -> Validator.isInteger(string))
-                .withMessageContaining(Validator.IS_INTEGER_EXCEPTION_MESSAGE);
+                .withMessageContaining(Validator.INTEGER_EXCEPTION_MESSAGE);
     }
 
     @DisplayName("시도 횟수 정수 검증")
