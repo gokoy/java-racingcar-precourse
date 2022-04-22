@@ -45,4 +45,8 @@ public class View {
         }
         System.out.println(builder);
     }
+
+    public static void printExceptionMessage(Exception e) {
+        System.out.println("[ERROR] " + e.getMessage());
+    }
 }
