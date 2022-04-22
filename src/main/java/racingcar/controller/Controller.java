@@ -1,7 +1,7 @@
 package racingcar.controller;
 
 import racingcar.config.Configuration;
-import racingcar.domain.Racing;
+import racingcar.model.Racing;
 import racingcar.util.Validator;
 import racingcar.view.View;
 
