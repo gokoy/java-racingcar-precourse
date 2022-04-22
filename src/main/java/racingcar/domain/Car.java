@@ -4,11 +4,11 @@ import camp.nextstep.edu.missionutils.Randoms;
 
 public class Car {
 
-    private final String name;
+    private final Name name;
     private final Distance distance;
 
     public Car(String name) {
-        this.name = name;
+        this.name = new Name(name);
         this.distance = new Distance(0);
     }
 
@@ -21,7 +21,7 @@ public class Car {
     }
 
     public String getName() {
-        return name;
+        return name.getName();
     }
 
     public int getDistance() {
